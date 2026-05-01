@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;300;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Montserrat", sans-serif;
+  
+  --color-luxury-white: #FFFFFF;
+  --color-luxury-black: #0A0A0A;
+  --color-luxury-cream: #F5F2ED;
+  --color-luxury-ink: #0A0A0A;
+  --color-luxury-accent: #8B8B7A;
+  --color-luxury-divider: rgba(0,0,0,0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-luxury-cream text-luxury-ink font-sans selection:bg-luxury-black selection:text-luxury-white overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold uppercase tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-editorial {
+    @apply font-serif italic font-light;
+  }
+  
+  .letter-spacing-luxury {
+    @apply tracking-[0.4em] uppercase;
+  }
+
+  .letter-spacing-nav {
+    @apply tracking-[0.1em] uppercase font-medium;
+  }
+  
+  .luxury-blur-bg {
+    @apply backdrop-blur-md bg-white/70;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .border-subtle {
+    @apply border-luxury-divider;
+  }
+}
+
+/* Custom Scrollbar for Luxury Feel */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6D4D1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0A0A0A;
+}
